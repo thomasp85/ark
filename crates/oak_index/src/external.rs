@@ -133,6 +133,12 @@ pub fn directive_layers(directives: &[Directive]) -> Vec<(TextSize, ScopeId, Sco
                     ScopeLayer::PackageExports(pkg.clone()),
                 ));
             },
+            DirectiveKind::Source { file, exports } => {
+                layers.push((offset, directive.scope(), ScopeLayer::FileExports {
+                    file: file.clone(),
+                    exports: exports.clone(),
+                }));
+            },
         }
     }
     layers
