@@ -353,6 +353,7 @@ dependencies = [
  "amalthea",
  "anyhow",
  "ark",
+ "ark_macros",
  "ark_test",
  "assert_matches",
  "async-trait",
@@ -411,6 +412,14 @@ dependencies = [
  "winsafe",
  "xdg",
  "yaml-rust",
+]
+
+[[package]]
+name = "ark_macros"
+version = "0.1.0"
+dependencies = [
+ "quote",
+ "syn 2.0.111",
 ]
 
 [[package]]
