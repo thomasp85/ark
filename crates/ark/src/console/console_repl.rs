@@ -699,6 +699,7 @@ impl Console {
                         None => String::from("(unknown payload)"),
                     },
                 };
+                log::error!("Panic in Console callback: {msg}");
                 Err(anyhow!("Panic in Console callback: {msg}"))
             },
         }
