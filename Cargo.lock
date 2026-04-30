@@ -428,6 +428,7 @@ dependencies = [
  "oak_layers",
  "oak_package",
  "oak_package_definitions",
+ "oak_package_metadata",
  "once_cell",
  "regex",
  "reqwest",
@@ -2459,6 +2460,7 @@ dependencies = [
  "oak_layers",
  "oak_package",
  "oak_package_definitions",
+ "oak_package_metadata",
  "oak_sources",
  "stdext",
  "url",
@@ -2499,6 +2501,7 @@ dependencies = [
  "oak_index",
  "oak_package",
  "oak_package_definitions",
+ "oak_package_metadata",
  "oak_sources",
  "stdext",
  "url",
@@ -2508,13 +2511,9 @@ dependencies = [
 name = "oak_package"
 version = "0.1.0"
 dependencies = [
- "air_r_parser",
- "air_r_syntax",
  "anyhow",
- "biome_rowan",
  "log",
- "oak_core",
- "regex",
+ "oak_package_metadata",
  "stdext",
  "tempfile",
 ]
@@ -2531,9 +2530,24 @@ dependencies = [
  "oak_index",
  "oak_index_vec",
  "oak_package",
+ "oak_package_metadata",
  "oak_sources",
  "rustc-hash",
  "stdext",
+]
+
+[[package]]
+name = "oak_package_metadata"
+version = "0.1.0"
+dependencies = [
+ "air_r_parser",
+ "air_r_syntax",
+ "anyhow",
+ "biome_rowan",
+ "oak_core",
+ "regex",
+ "stdext",
+ "tempfile",
 ]
 
 [[package]]
@@ -2556,7 +2570,7 @@ dependencies = [
  "hex",
  "log",
  "oak_fs",
- "oak_package",
+ "oak_package_metadata",
  "oak_r_process",
  "serde",
  "serde_json",
