@@ -427,8 +427,8 @@ dependencies = [
  "oak_index",
  "oak_layers",
  "oak_package",
- "oak_package_definitions",
  "oak_package_metadata",
+ "oak_sources",
  "once_cell",
  "regex",
  "reqwest",
@@ -2459,7 +2459,6 @@ dependencies = [
  "oak_index",
  "oak_layers",
  "oak_package",
- "oak_package_definitions",
  "oak_package_metadata",
  "oak_sources",
  "stdext",
@@ -2500,7 +2499,6 @@ dependencies = [
  "biome_rowan",
  "oak_index",
  "oak_package",
- "oak_package_definitions",
  "oak_package_metadata",
  "oak_sources",
  "stdext",
@@ -2511,17 +2509,6 @@ dependencies = [
 name = "oak_package"
 version = "0.1.0"
 dependencies = [
- "anyhow",
- "log",
- "oak_package_metadata",
- "stdext",
- "tempfile",
-]
-
-[[package]]
-name = "oak_package_definitions"
-version = "0.1.0"
-dependencies = [
  "air_r_parser",
  "anyhow",
  "biome_text_size",
@@ -2529,11 +2516,11 @@ dependencies = [
  "oak_core",
  "oak_index",
  "oak_index_vec",
- "oak_package",
  "oak_package_metadata",
  "oak_sources",
  "rustc-hash",
  "stdext",
+ "tempfile",
 ]
 
 [[package]]
