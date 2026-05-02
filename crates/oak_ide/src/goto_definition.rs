@@ -4,7 +4,6 @@ use oak_index::external::resolve_external_name;
 use oak_index::external::resolve_in_package;
 use oak_index::external::ExternalDefinition;
 use oak_index::external::ScopeLayer;
-use oak_index::semantic_index::DefinitionKind;
 use oak_index::semantic_index::SemanticIndex;
 use oak_index::semantic_index::Use;
 use oak_index::DefinitionId;
@@ -95,10 +94,7 @@ fn resolve_use(
         defs.iter()
             .map(|&def_id| {
                 let def = &index.definitions(scope)[def_id];
-                let target_file = match def.kind() {
-                    DefinitionKind::Sourced { file: source_file } => source_file.clone(),
-                    _ => file.clone(),
-                };
+                let target_file = def.file().cloned().unwrap_or_else(|| file.clone());
                 NavigationTarget {
                     file: target_file,
                     name: symbol_name.to_string(),
